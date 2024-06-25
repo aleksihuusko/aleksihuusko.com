@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "@/lib/storyblok-provider";
-import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Aleksi Huusko",
@@ -31,13 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <StoryblokProvider>
-      <html lang="en">
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
+      <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        <body className="min-h-screen bg-background antialiased">
           {children}
         </body>
       </html>
