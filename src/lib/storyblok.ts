@@ -2,19 +2,16 @@
 
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "@/components/page";
-import Grid from "@/components/grid";
-import Feature from "@/components/feature";
-import Teaser from "@/components/teaser";
+
+import Header1 from "@/components/headers/header1";
 
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
   page: Page,
+  header1: Header1,
 };
 
 storyblokInit({
-  accessToken: process.env.STORYBLOK_API_TOKEN,
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_API_TOKEN,
   use: [apiPlugin],
   apiOptions: {
     region: "eu",
@@ -24,8 +21,6 @@ storyblokInit({
 
 export default function StoryblokProvider({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }
