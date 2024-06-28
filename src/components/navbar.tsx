@@ -19,7 +19,7 @@ const navigation = [
   { name: "About", href: "#" },
   { name: "Services", href: "#" },
   { name: "Work", href: "#" },
-  { name: "Blog", href: "#" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -27,14 +27,14 @@ export default function Navbar() {
 
   return (
     <header className="bg-background">
-      <div className="container">
+      <div className="container px-[5%]">
         <nav
           className="mx-auto flex items-center justify-between py-6"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
             <Link
-              href="#"
+              href="/"
               className="-m-1.5 flex items-center justify-center gap-2 p-1.5 font-semibold transition duration-200 ease-in-out hover:text-muted-foreground"
             >
               <span className="sr-only">Aleksi Huusko</span>
@@ -84,10 +84,10 @@ export default function Navbar() {
           onClose={setMobileMenuOpen}
         >
           <div className="fixed inset-0 z-10" />
-          <DialogPanel className="container fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-background py-6 sm:max-w-sm sm:ring-1 sm:ring-foreground/10">
+          <DialogPanel className="container fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-background px-[5%] py-6 sm:max-w-sm sm:ring-1 sm:ring-foreground/10">
             <div className="flex items-center justify-between gap-x-6">
               <Link
-                href="#"
+                href="/"
                 className="-m-1.5 flex items-center justify-center gap-2 p-1.5 font-semibold"
               >
                 <span className="sr-only">Aleksi Huusko</span>
@@ -116,13 +116,13 @@ export default function Navbar() {
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
+                <div className="flex flex-col gap-4 py-8 lg:hidden">
+                  <Button variant="outline" asChild>
+                    <Link href="#">Free Audit</Link>
+                  </Button>
+                  <Button variant="default" asChild>
+                    <Link href="#">Start a Project</Link>
+                  </Button>
                 </div>
               </div>
             </div>

@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 
 const Header1 = ({ blok }: any) => {
   return (
-    <header className="py-16 md:py-24 lg:py-28">
-      <div className="container">
+    <header className="py-12 md:py-24 lg:py-24">
+      <div className="container flex px-[5%]">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
           <div>
             <h1
@@ -34,7 +34,7 @@ const Header1 = ({ blok }: any) => {
           <div>
             <Image
               src={blok.image.filename}
-              className="w-full object-cover"
+              className="w-full rounded-lg object-cover"
               alt={blok.image.alt}
               width={1000}
               height={1000}
