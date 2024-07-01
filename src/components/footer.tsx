@@ -108,9 +108,9 @@ export default function Footer() {
               <Logo className="h-8 w-8" />
               Aleksi Huusko
             </Link>
-            <p className="text-sm leading-6 text-muted-foreground">
-              Making the world a better place through constructing elegant
-              hierarchies.
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground">
+              Using innovative and cost-effective solutions to help businesses
+              attract and keep new consumers.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
